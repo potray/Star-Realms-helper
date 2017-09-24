@@ -2,6 +2,7 @@ import {Player} from "./player";
 
 describe('Player class', () => {
   const INITIAL_AUTHORITY = 150;
+  const PLAYER_NAME = 'Yarrick';
   it('Should be created', () => {
     const player = new Player();
     expect(player).toBeTruthy();
@@ -34,11 +35,15 @@ describe('Player class', () => {
     expect(player.trade).toBe(0);
     expect(player.combat).toBe(0);
   });
-  it ('Should not have a negative authority', () => {
+  it('Should not have a negative authority', () => {
     const player = new Player(INITIAL_AUTHORITY);
     player.subtractAuthority(INITIAL_AUTHORITY);
     expect(player.authority).toBe(0);
     player.subtractAuthority(10);
     expect(player.authority).toBe(0);
+  });
+  it('Should have a name', () => {
+    const player = new Player(INITIAL_AUTHORITY, PLAYER_NAME);
+    expect(player.name).toBe(PLAYER_NAME);
   })
 });
