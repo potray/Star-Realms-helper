@@ -4,15 +4,23 @@ import {Player} from "../model/player";
 @Component({
   selector: 'app-player',
   templateUrl: './player.component.html',
-  styleUrls: ['./player.component.css']
+  styleUrls: [ './player.component.css' ]
 })
 export class PlayerComponent implements OnInit {
 
-  constructor() { }
+  constructor () { }
 
   @Input() player: Player;
 
-  ngOnInit() {
+  ngOnInit () {
+  }
+
+  decrementAuthority (amount: number): void {
+    this.player.subtractAuthority(amount);
+  }
+
+  incrementAuthority (amount: number): void {
+    this.player.addAuthority(amount);
   }
 
 }

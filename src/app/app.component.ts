@@ -9,5 +9,6 @@ import {Player} from "./model/player";
 export class AppComponent {
   title = 'app';
 
-  player: Player = new Player(20, 'potato');
+  player: Player = new Player(150, 'Yarrick');
+  player2: Player = new Player(150, 'Friklauta')
 }
